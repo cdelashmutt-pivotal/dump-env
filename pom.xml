@@ -5,11 +5,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>hello-world</artifactId>
+  <groupId>com.vmware.tanzu.se</groupId>
+  <artifactId>dump-env</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Jetty HelloWorld</name>
+  <name>Dump Java Environment Info</name>
 
   <properties>
       <!-- Adapt this to a version found on
