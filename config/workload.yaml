@@ -1,0 +1,26 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+  name: dump-env
+  namespace: chris
+spec:
+  build:
+    env:
+    - name: BP_MAVEN_BUILT_ARTIFACT
+      value: target/*-jar-with-dependencies.jar
+  env:
+  - name: JAVA_TOOL_OPTIONS
+    value: -Dfoo=$DSC_VAL
+  - name: DSC_VAL
+    valueFrom:
+      secretKeyRef:
+        key: bar
+        name: foo
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/cdelashmutt-pivotal/dump-env
